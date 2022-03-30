@@ -4,7 +4,7 @@ class Team {
   }
 
   add(character) {
-    this[this.characters.type] = character;
+    this.characters.push(character);
     return this;
   }
  
