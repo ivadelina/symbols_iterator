@@ -1,8 +1,15 @@
-/* eslint-disable linebreak-style */
-export default function sum(items) {
-  let result = 0;
-  for (const item of items) {
-    result += item;
+export default class Team {
+  constructor() {
+    this.members = new Set();
   }
-  return result;
+
+  add(character) {
+    if (this.members.has(character)) {
+      throw new Error('Уже есть такой персонаж');
+    } return this.members.add(character);
+  }
+
+  getChar() {
+    this.members.forEach((el) => console.log(el))
+  }
 }

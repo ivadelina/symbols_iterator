@@ -8,19 +8,18 @@ class Team {
     return this;
   }
  
-  // метод получения станции по id
   get(idx) {
     return this.characters[idx];
   }
  
-  // реализация итератора
+
   [Symbol.iterator]() {
-    return new RouteIterator(this); // разберем ниже
+    return new RouteIterator(this); 
   }
  }
  class RouteIterator {
-  _route; // доступ до итерируемого объекта
-  _nextIdx; // указатель следующего значения
+  _route; 
+  _nextIdx; 
  
   constructor(route) {
    this._route = route;
@@ -29,7 +28,7 @@ class Team {
  
   next() {
    if (this._nextIdx === this._route.characters.length) {
-    return { done: true } // проверка на последний элемент
+    return { done: true } 
    }
  
    const result = {
